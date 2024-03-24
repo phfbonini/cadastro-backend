@@ -3,7 +3,7 @@ package com.example.cadastrobackend.contato;
 public record ContatoResponseDTO(
         Long cd_contato,
         String nm_contato,
-        Integer telefone,
+        String telefone,
         String email
 ) {
     public ContatoResponseDTO(Contato contato) {

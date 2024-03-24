@@ -11,7 +11,6 @@ import jakarta.validation.constraints.Pattern;
 import java.util.Date;
 
 public record ContatoRequestDTO(
-        @NotNull(message = "O ID da pessoa é obrigatório")
         Long cd_pessoa,
         @NotBlank(message = "O nome do contato é obrigatório")
         String nm_contato,

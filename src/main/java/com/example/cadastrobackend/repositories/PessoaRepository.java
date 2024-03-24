@@ -1,5 +1,7 @@
-package com.example.cadastrobackend.pessoa;
+package com.example.cadastrobackend.repositories;
 
+import com.example.cadastrobackend.pessoa.Pessoa;
+import com.example.cadastrobackend.pessoa.PessoaResponseDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
