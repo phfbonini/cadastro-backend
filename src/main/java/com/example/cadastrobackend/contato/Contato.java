@@ -31,7 +31,7 @@ public class Contato {
     public Contato(ContatoId id, ContatoRequestDTO data) {
         this.id = id;
         this.nm_contato = data.nm_contato();
-        this.telefone = data.telefone();
+        this.telefone = Integer.valueOf(data.telefone());
         this.email = data.email();
     }
 }
