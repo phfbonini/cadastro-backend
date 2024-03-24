@@ -29,14 +29,14 @@ public class ContatoController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/paginado")
-    // Método para obter contatos de forma paginada
+    // Método para obter contatos de forma paginada Ok
     public Page<ContatoResponseDTO> getContatosPaginado(Pageable pageable) {
         return contatoRepository.findAll(pageable).map(ContatoResponseDTO::new);
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("/add/{cd_pessoa}")
-    // Adiciona um novo contato para uma pessoa específica
+    // Adiciona um novo contato para uma pessoa específica Ok
     public ResponseEntity<?> addContato(@PathVariable Long cd_pessoa, @Valid @RequestBody ContatoRequestDTO data, BindingResult result) {
         System.out.println("@TESTEEE" + cd_pessoa);
         if (result.hasErrors()) {
@@ -52,7 +52,7 @@ public class ContatoController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PutMapping("/{cd_pessoa}/{cd_contato}")
-    // Atualiza um contato existente
+    // Atualiza um contato existente ok
     public void updateContato(@PathVariable Long cd_pessoa, @PathVariable Long cd_contato, @RequestBody ContatoRequestDTO data) {
         Contato contato = contatoRepository.findByCdPessoaAndCdContato(cd_pessoa, cd_contato)
                 .orElseThrow(() -> new RuntimeException("Contato não encontrado"));
@@ -65,7 +65,7 @@ public class ContatoController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @DeleteMapping("/{cd_pessoa}/{cd_contato}")
-    // Apaga um contato específico
+    // Apaga um contato específico ok
     public void deleteContato(@PathVariable Long cd_pessoa, @PathVariable Long cd_contato) {
         Contato contato = contatoRepository.findByCdPessoaAndCdContato(cd_pessoa, cd_contato)
                 .orElseThrow(() -> new RuntimeException("Contato não encontrado"));
